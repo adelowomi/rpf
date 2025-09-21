@@ -23,25 +23,25 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   const branches = [
     {
-      name: "RPF London",
+      name: "RPF Europe",
       address: "9-11 Cottage Green, London SE5 7ST",
-      phone: "+44 20 7123 4567",
-      email: "london@rpfeurope.org",
+      phone: "020 335 52829",
+      email: "admin@rpfeurope.com",
       serviceTime: "Sundays 10:00 AM",
     },
     {
-      name: "RPF Manchester",
-      address: "Central Manchester Location",
-      phone: "+44 161 123 4567",
-      email: "manchester@rpfeurope.org",
-      serviceTime: "Sundays 11:00 AM",
+      name: "RPF Africa",
+      address: "Multiple African Locations",
+      phone: "Contact via Email",
+      email: "africa@rpfglobal.org",
+      serviceTime: "Various Times",
     },
     {
-      name: "RPF Birmingham",
-      address: "Central Birmingham Location",
-      phone: "+44 121 123 4567",
-      email: "birmingham@rpfeurope.org",
-      serviceTime: "Sundays 10:30 AM",
+      name: "RPF North America",
+      address: "Multiple North American Locations",
+      phone: "Contact via Email",
+      email: "northamerica@rpfglobal.org",
+      serviceTime: "Various Times",
     },
   ];
 
@@ -79,15 +79,18 @@ function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-gray-900 to-black text-white">
+      <section className="relative py-20 bg-rpf-gradient-primary text-rpf-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-black mb-6">
+            <h1 className="rpf-title text-5xl md:text-6xl mb-6">
               CONTACT & RESOURCES
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-300">
-              Get in touch with us and access helpful resources for your faith
-              journey
+            <p className="rpf-body text-xl md:text-2xl mb-4 text-rpf-white/90">
+              Get in touch with us and access helpful resources for your
+              spiritual growth
+            </p>
+            <p className="rpf-tagline text-rpf-gold text-lg">
+              IT'S TIME TO SEEK THE LORD
             </p>
           </div>
         </div>
@@ -98,12 +101,12 @@ function ContactPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black mb-4 text-gray-900">
+              <h2 className="rpf-title text-4xl md:text-5xl mb-4 text-rpf-black">
                 GET IN TOUCH
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                We'd love to hear from you. Reach out to any of our locations or
-                connect with us online.
+              <p className="rpf-body text-xl text-rpf-black/70 max-w-2xl mx-auto">
+                We'd love to connect with you. Reach out to any of our global
+                locations or join our online community.
               </p>
             </div>
 
@@ -112,32 +115,38 @@ function ContactPage() {
               {branches.map((branch, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-gray-100"
+                  className="bg-rpf-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-rpf-muted-grey/20"
                 >
-                  <h3 className="text-2xl font-bold mb-6 text-gray-900">
+                  <h3 className="rpf-title text-2xl mb-6 text-rpf-black">
                     {branch.name}
                   </h3>
                   <div className="space-y-4">
                     <div className="flex items-start space-x-3">
-                      <MapPin className="h-5 w-5 text-gray-500 mt-1 flex-shrink-0" />
-                      <span className="text-gray-600">{branch.address}</span>
+                      <MapPin className="h-5 w-5 text-rpf-purple mt-1 flex-shrink-0" />
+                      <span className="rpf-body text-rpf-black/70">
+                        {branch.address}
+                      </span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Phone className="h-5 w-5 text-gray-500 flex-shrink-0" />
-                      <span className="text-gray-600">{branch.phone}</span>
+                      <Phone className="h-5 w-5 text-rpf-purple flex-shrink-0" />
+                      <span className="rpf-body text-rpf-black/70">
+                        {branch.phone}
+                      </span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Mail className="h-5 w-5 text-gray-500 flex-shrink-0" />
-                      <span className="text-gray-600">{branch.email}</span>
+                      <Mail className="h-5 w-5 text-rpf-purple flex-shrink-0" />
+                      <span className="rpf-body text-rpf-black/70">
+                        {branch.email}
+                      </span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Clock className="h-5 w-5 text-gray-500 flex-shrink-0" />
-                      <span className="text-gray-600">
+                      <Clock className="h-5 w-5 text-rpf-purple flex-shrink-0" />
+                      <span className="rpf-body text-rpf-black/70">
                         {branch.serviceTime}
                       </span>
                     </div>
                   </div>
-                  <Button className="w-full mt-6 bg-black hover:bg-gray-800 text-white rounded-full font-semibold">
+                  <Button className="w-full mt-6 bg-rpf-gradient-primary hover:opacity-90 text-rpf-white rounded-full rpf-body font-semibold shadow-md">
                     Visit This Branch
                   </Button>
                 </div>
@@ -300,22 +309,25 @@ function ContactPage() {
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-r from-red-500 to-pink-600 rounded-3xl p-12 text-white text-center">
-              <h2 className="text-4xl font-black mb-6">
+            <div className="bg-rpf-gradient-fire rounded-3xl p-12 text-rpf-white text-center">
+              <h2 className="rpf-title text-4xl mb-6">
                 NEED PRAYER OR SUPPORT?
               </h2>
-              <p className="text-xl mb-8 opacity-90">
+              <p className="rpf-body text-xl mb-4 text-rpf-white/90">
                 If you're going through a difficult time or need someone to pray
-                with you, we're here 24/7.
+                with you, our ministry is built on love and prayer.
+              </p>
+              <p className="rpf-tagline text-rpf-white mb-8">
+                IT'S TIME TO SEEK THE LORD
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-white text-red-600 hover:bg-gray-100 px-8 py-4 rounded-full font-bold">
+                <Button className="bg-rpf-white text-rpf-red hover:bg-rpf-white/90 px-8 py-4 rounded-full rpf-body font-bold shadow-lg">
                   <Phone className="mr-2 h-5 w-5" />
                   Call Prayer Line
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-red-600 px-8 py-4 rounded-full font-bold"
+                  className="border-rpf-white text-rpf-white hover:bg-rpf-white hover:text-rpf-red px-8 py-4 rounded-full rpf-body font-bold"
                 >
                   Submit Prayer Request
                 </Button>

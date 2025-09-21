@@ -11,10 +11,6 @@ import {
   ChevronDown,
   Phone,
   Mail,
-  Instagram,
-  Facebook,
-  Twitter,
-  Church,
   Flame,
   X,
   Clock,
@@ -26,6 +22,31 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
+const heroSlides = [
+  {
+    title: "IT'S TIME TO SEEK THE LORD",
+    subtitle:
+      "Sow to yourselves in righteousness, reap in mercy; break up your fallow ground",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    cta: "Start Your Journey",
+  },
+  {
+    title: "EXPERIENCE REVIVAL",
+    subtitle: "Join a community built on love, prayer, and sound doctrine",
+    image:
+      "https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    cta: "Join Revival",
+  },
+  {
+    title: "TRANSFORMATION AWAITS",
+    subtitle: "Discover the power of Christ's transformation in your life",
+    image:
+      "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
+    cta: "Get Transformed",
+  },
+];
+
 function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -34,15 +55,15 @@ function HomePage() {
   const branches = [
     {
       id: "london",
-      name: "RPF LONDON",
+      name: "RPF EUROPE",
       location: "London, UK",
       address: "9-11 Cottage Green, London SE5 7ST",
       image:
         "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       description:
-        "Our flagship location where it all began in 2014. Experience powerful worship and life-changing ministry in the heart of London.",
+        "Our flagship location where revival began in 2014. Experience powerful worship, sound doctrine, and life-changing ministry in the heart of London.",
       badge: "FLAGSHIP",
-      color: "from-blue-600 to-blue-700",
+      color: "from-rpf-purple to-rpf-blue",
       services: {
         sunday: "10:00 AM",
         wednesday: "7:00 PM",
@@ -50,10 +71,10 @@ function HomePage() {
         youth: "Saturdays 4:00 PM",
       },
       contact: {
-        phone: "+44 20 7123 4567",
-        email: "london@rpfeurope.org",
+        phone: "020 335 52829",
+        email: "admin@rpfeurope.com",
       },
-      pastor: "Pastor John Smith",
+      pastor: "Pastor Austin E-Ben",
       established: "2014",
       capacity: "500 people",
       parking: "Street parking available",
@@ -73,15 +94,15 @@ function HomePage() {
       ],
     },
     {
-      id: "manchester",
-      name: "RPF MANCHESTER",
-      location: "Manchester, UK",
-      address: "Central Manchester Location",
+      id: "africa",
+      name: "RPF AFRICA",
+      location: "Multiple Locations",
+      address: "Various African Cities",
       image:
         "https://images.unsplash.com/photo-1583422409516-2895a77efded?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       description:
-        "Bringing revival to the North with passionate worship, strong community, and transformative ministry experiences.",
-      color: "from-green-600 to-green-700",
+        "Spreading revival across Africa with passionate worship, strong community, and transformative ministry experiences rooted in love and prayer.",
+      color: "from-rpf-red to-rpf-gold",
       services: {
         sunday: "11:00 AM",
         wednesday: "7:00 PM",
@@ -112,15 +133,15 @@ function HomePage() {
       ],
     },
     {
-      id: "birmingham",
-      name: "RPF BIRMINGHAM",
-      location: "Birmingham, UK",
-      address: "Central Birmingham Location",
+      id: "northamerica",
+      name: "RPF NORTH AMERICA",
+      location: "Multiple Locations",
+      address: "Various North American Cities",
       image:
         "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       description:
-        "Serving the Midlands with love, prayer, and transformative worship that impacts lives and communities.",
-      color: "from-purple-600 to-purple-700",
+        "Establishing revival across North America with love, prayer, and transformative worship that impacts lives and communities.",
+      color: "from-rpf-blue to-rpf-purple",
       services: {
         sunday: "10:30 AM",
         wednesday: "7:00 PM",
@@ -149,30 +170,6 @@ function HomePage() {
         "Quarterly Family Days",
         "Annual Youth Camp",
       ],
-    },
-  ];
-
-  const heroSlides = [
-    {
-      title: "FIND YOUR PURPOSE",
-      subtitle: "Discover what God has planned for your life",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-      cta: "Start Your Journey",
-    },
-    {
-      title: "GROW IN COMMUNITY",
-      subtitle: "Connect with others who share your faith",
-      image:
-        "https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-      cta: "Join A Group",
-    },
-    {
-      title: "MAKE A DIFFERENCE",
-      subtitle: "Use your gifts to serve others and change lives",
-      image:
-        "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80",
-      cta: "Get Involved",
     },
   ];
 
@@ -410,9 +407,7 @@ function HomePage() {
                   </div>
 
                   <div className="pt-4">
-                    <Button
-                      className={`w-full bg-gradient-to-r ${selectedBranch.color} hover:opacity-90 text-white rounded-full font-semibold py-3`}
-                    >
+                    <Button className="w-full bg-rpf-gradient-primary hover:opacity-90 text-rpf-white rounded-full rpf-body font-semibold py-3 shadow-lg">
                       Plan Your Visit
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
@@ -442,20 +437,20 @@ function HomePage() {
         ))}
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+        <div className="relative z-10 text-center text-rpf-white px-4 max-w-4xl mx-auto">
           <div
             className={`transform transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 tracking-tight">
+            <h1 className="rpf-title text-5xl md:text-7xl lg:text-8xl mb-6 tracking-tight">
               {heroSlides[currentSlide].title}
             </h1>
-            <p className="text-xl md:text-2xl lg:text-3xl mb-12 font-light max-w-3xl mx-auto">
+            <p className="rpf-body text-xl md:text-2xl lg:text-3xl mb-12 font-light max-w-3xl mx-auto text-rpf-white/90">
               {heroSlides[currentSlide].subtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 size="lg"
-                className="bg-white text-black hover:bg-gray-100 text-lg px-8 py-4 rounded-full font-bold shadow-lg transform hover:scale-105 transition-all duration-300"
+                className="bg-rpf-gold text-rpf-black hover:bg-rpf-gold/90 rpf-body text-lg px-8 py-4 rounded-full font-bold shadow-lg transform hover:scale-105 transition-all duration-300"
               >
                 {heroSlides[currentSlide].cta}
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -463,7 +458,7 @@ function HomePage() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-black text-lg px-8 py-4 rounded-full font-bold shadow-lg transform hover:scale-105 transition-all duration-300"
+                className="border-rpf-white text-rpf-white hover:bg-rpf-white hover:text-rpf-black rpf-body text-lg px-8 py-4 rounded-full font-bold shadow-lg transform hover:scale-105 transition-all duration-300"
               >
                 <Play className="mr-2 h-5 w-5" />
                 Watch Online
@@ -491,76 +486,93 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Service Times Section - Elevation Style */}
-      <section className="py-20 bg-gray-50">
+      {/* Service Times Section - RPF Style */}
+      <section className="py-20 bg-rpf-ivory">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black mb-4 text-gray-900">
+              <h2 className="rpf-title text-4xl md:text-5xl mb-4 text-rpf-black">
                 JOIN US THIS WEEKEND
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Experience life-changing worship and biblical teaching that will
-                inspire your week
+              <p className="rpf-body text-xl text-rpf-black/70 max-w-2xl mx-auto mb-4">
+                Experience revival, sound doctrine, and transformative worship
+                that will inspire your faith journey
+              </p>
+              <p className="rpf-tagline text-rpf-gold">
+                IT'S TIME TO SEEK THE LORD
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Sunday Service */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              <div className="bg-rpf-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Calendar className="h-8 w-8 text-white" />
+                  <div className="w-16 h-16 bg-rpf-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <Calendar className="h-8 w-8 text-rpf-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-2 text-gray-900">
+                  <h3 className="rpf-title text-2xl mb-2 text-rpf-black">
                     SUNDAY SERVICE
                   </h3>
-                  <p className="text-gray-600 mb-4">Main Worship Experience</p>
+                  <p className="rpf-body text-rpf-black/70 mb-4">
+                    Main Revival Experience
+                  </p>
                   <div className="space-y-2">
-                    <p className="text-lg font-semibold">10:00 AM</p>
-                    <p className="text-sm text-gray-500">In-Person & Online</p>
+                    <p className="rpf-body text-lg font-semibold text-rpf-purple">
+                      10:00 AM
+                    </p>
+                    <p className="rpf-body text-sm text-rpf-black/60">
+                      In-Person & Online
+                    </p>
                   </div>
-                  <Button className="mt-6 w-full bg-black hover:bg-gray-800 text-white rounded-full">
+                  <Button className="mt-6 w-full bg-rpf-gradient-primary hover:opacity-90 text-rpf-white rounded-full rpf-body shadow-md">
                     Plan Your Visit
                   </Button>
                 </div>
               </div>
 
               {/* Midweek Service */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              <div className="bg-rpf-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Heart className="h-8 w-8 text-white" />
+                  <div className="w-16 h-16 bg-rpf-gradient-fire rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <Heart className="h-8 w-8 text-rpf-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-2 text-gray-900">
+                  <h3 className="rpf-title text-2xl mb-2 text-rpf-black">
                     MIDWEEK
                   </h3>
-                  <p className="text-gray-600 mb-4">Prayer & Bible Study</p>
+                  <p className="rpf-body text-rpf-black/70 mb-4">
+                    Prayer & Sound Doctrine
+                  </p>
                   <div className="space-y-2">
-                    <p className="text-lg font-semibold">7:00 PM</p>
-                    <p className="text-sm text-gray-500">Wednesday</p>
+                    <p className="rpf-body text-lg font-semibold text-rpf-red">
+                      7:00 PM
+                    </p>
+                    <p className="rpf-body text-sm text-rpf-black/60">
+                      Wednesday
+                    </p>
                   </div>
-                  <Button className="mt-6 w-full bg-black hover:bg-gray-800 text-white rounded-full">
+                  <Button className="mt-6 w-full bg-rpf-gradient-fire hover:opacity-90 text-rpf-white rounded-full rpf-body shadow-md">
                     Join Online
                   </Button>
                 </div>
               </div>
 
               {/* Youth Service */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 md:col-span-2 lg:col-span-1">
+              <div className="bg-rpf-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 md:col-span-2 lg:col-span-1">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Users className="h-8 w-8 text-white" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-rpf-blue to-rpf-purple rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <Users className="h-8 w-8 text-rpf-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-2 text-gray-900">
-                    YOUTH
+                  <h3 className="rpf-title text-2xl mb-2 text-rpf-black">
+                    YOUTH MINISTRY
                   </h3>
-                  <p className="text-gray-600 mb-4">Ages 13-18</p>
+                  <p className="rpf-body text-rpf-black/70 mb-4">Ages 13-18</p>
                   <div className="space-y-2">
-                    <p className="text-lg font-semibold">6:00 PM</p>
-                    <p className="text-sm text-gray-500">Friday</p>
+                    <p className="rpf-body text-lg font-semibold text-rpf-blue">
+                      6:00 PM
+                    </p>
+                    <p className="rpf-body text-sm text-rpf-black/60">Friday</p>
                   </div>
-                  <Button className="mt-6 w-full bg-black hover:bg-gray-800 text-white rounded-full">
+                  <Button className="mt-6 w-full bg-gradient-to-r from-rpf-blue to-rpf-purple hover:opacity-90 text-rpf-white rounded-full rpf-body shadow-md">
                     Learn More
                   </Button>
                 </div>
@@ -570,35 +582,40 @@ function HomePage() {
         </div>
       </section>
 
-      {/* About Section - Clean Elevation Style */}
-      <section className="py-20 bg-white">
+      {/* About Section - RPF Style */}
+      <section className="py-20 bg-rpf-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <h2 className="text-4xl md:text-5xl font-black mb-8 text-gray-900">
-                  ABOUT RPF EUROPE
+                <h2 className="rpf-title text-4xl md:text-5xl mb-8 text-rpf-black">
+                  ABOUT REDEEMED PILLAR OF FIRE
                 </h2>
-                <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+                <div className="space-y-6 rpf-body text-lg text-rpf-black/80 leading-relaxed">
                   <p>
-                    Welcome to Redeemed Pillar of Fire Europe - a vibrant
-                    community of believers dedicated to revival, prayer, and
-                    spreading God's love across Europe and beyond.
+                    <strong className="text-rpf-purple">Our Mission:</strong> To
+                    spark and sustain revival and restore the early church as
+                    defined in Acts until the coming of Christ.
                   </p>
                   <p>
-                    Founded in October 2014 by Pastor Augustine E-Ben, our
-                    ministry has expanded greatly with several branches and
-                    university fellowships worldwide. We are built on love and
-                    prayer, steadfastly dedicating ourselves to looking more
-                    like Christ daily.
+                    Founded in October 2014 by Pastor Austin E-Ben, our ministry
+                    has expanded globally with branches across Europe, Africa,
+                    North America, and university campuses worldwide. We are
+                    built on love and prayer, steadfastly dedicating ourselves
+                    to transformation and spiritual growth.
                   </p>
                   <p>
-                    Our goal is to bring souls from darkness to light, that they
-                    may receive forgiveness of sins and the inheritance promised
-                    to those who are sanctified by faith in Jesus Christ.
+                    <strong className="text-rpf-red">Our Foundation:</strong>{" "}
+                    Love for Christ and the Brethren, Sound Doctrine,
+                    Transformation and Growth, and Spiritual Discipline -
+                    practices that deepen our relationship with Christ through
+                    Word reading, prayer, fasting, and evangelism.
+                  </p>
+                  <p className="rpf-tagline text-rpf-gold font-semibold">
+                    "IT'S TIME TO SEEK THE LORD" - Hosea 10:12
                   </p>
                 </div>
-                <Button className="mt-8 bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-full font-bold">
+                <Button className="mt-8 bg-rpf-gradient-primary hover:opacity-90 text-rpf-white px-8 py-4 rounded-full rpf-body font-bold shadow-lg">
                   Learn More About Us
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -632,16 +649,17 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Pastor Section - Elevation Style */}
-      <section className="py-20 bg-gray-50">
+      {/* Pastor Section - RPF Style */}
+      <section className="py-20 bg-rpf-ivory">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black mb-4 text-gray-900">
+              <h2 className="rpf-title text-4xl md:text-5xl mb-4 text-rpf-black">
                 MEET OUR PASTOR
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Leading with passion, purpose, and unwavering faith
+              <p className="rpf-body text-xl text-rpf-black/70 max-w-2xl mx-auto">
+                Leading with love, sound doctrine, and unwavering commitment to
+                revival
               </p>
             </div>
 
@@ -651,35 +669,42 @@ function HomePage() {
                   <img
                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                     alt="Pastor Austin E-Ben"
-                    className="w-80 h-80 rounded-full object-cover mx-auto lg:mx-0 shadow-2xl"
+                    className="w-80 h-80 rounded-full object-cover mx-auto lg:mx-0 shadow-2xl border-4 border-rpf-gold"
                   />
-                  <div className="absolute -bottom-4 -right-4 bg-black text-white p-4 rounded-full">
-                    <Church className="h-8 w-8" />
+                  <div className="absolute -bottom-4 -right-4 bg-rpf-gradient-primary text-rpf-white p-4 rounded-full shadow-lg">
+                    <Flame className="h-8 w-8" />
                   </div>
                 </div>
               </div>
               <div>
-                <h3 className="text-3xl md:text-4xl font-black mb-4 text-gray-900">
+                <h3 className="rpf-title text-3xl md:text-4xl mb-4 text-rpf-black">
                   PASTOR AUSTIN E-BEN
                 </h3>
-                <p className="text-lg text-gray-600 mb-6">
-                  Head Pastor & Founder
+                <p className="rpf-body text-lg text-rpf-purple mb-6 font-semibold">
+                  Founder & Senior Pastor
                 </p>
-                <div className="space-y-4 text-gray-700 leading-relaxed">
+                <div className="space-y-4 rpf-body text-rpf-black/80 leading-relaxed">
                   <p>
-                    Pastor Augustine E-Ben founded Redeemed Pillar of Fire
-                    Europe in October 2014. His love for God is reflected in his
-                    teaching of the word, love for souls, and dedication to the
-                    work of God.
+                    Pastor Austin E-Ben founded Redeemed Pillar of Fire in
+                    October 2014 under the guidance of his spiritual father,
+                    Bishop Adol Paul Obinwaogu. His love for God is reflected in
+                    his teaching of sound doctrine, love for souls, and
+                    unwavering dedication to revival.
                   </p>
                   <p>
-                    With the help of God, RPF Ministry aims to bring revival
-                    that will sweep the nations and restore the fear of the
-                    Lord. The ministry was built on love and prayer, as we all
-                    aim to look a little bit more like Christ daily.
+                    <strong className="text-rpf-red">Our Vision:</strong> "A
+                    city beyond walls: Jerusalem shall be inhabited as towns
+                    without walls... For I, saith the Lord, will be unto her a
+                    wall of fire round about, and will be the glory in the midst
+                    of her." - Zechariah 2:4-5
+                  </p>
+                  <p>
+                    The ministry is built on love and prayer, with all members
+                    steadfastly dedicating themselves to transformation and
+                    spiritual growth, aiming to look more like Christ daily.
                   </p>
                 </div>
-                <Button className="mt-8 bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-full font-bold">
+                <Button className="mt-8 bg-rpf-gradient-primary hover:opacity-90 text-rpf-white px-8 py-4 rounded-full rpf-body font-bold shadow-lg">
                   Read Pastor's Message
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -689,17 +714,20 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Branches Section - Vous Church Style */}
-      <section className="py-20 bg-white">
+      {/* Branches Section - RPF Global Ministry */}
+      <section className="py-20 bg-rpf-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black mb-4 text-gray-900">
-                OUR BRANCHES
+              <h2 className="rpf-title text-4xl md:text-5xl mb-4 text-rpf-black">
+                OUR GLOBAL MINISTRY
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Find a RPF Europe location near you and join our growing
-                community across Europe
+              <p className="rpf-body text-xl text-rpf-black/70 max-w-2xl mx-auto mb-4">
+                Find a Redeemed Pillar of Fire location near you and join our
+                growing revival movement worldwide
+              </p>
+              <p className="rpf-tagline text-rpf-gold">
+                IT'S TIME TO SEEK THE LORD
               </p>
             </div>
 
@@ -755,7 +783,7 @@ function HomePage() {
                         <span>Sundays {branch.services.sunday}</span>
                       </div>
                     </div>
-                    <Button className="w-full bg-black hover:bg-gray-800 text-white rounded-full font-semibold">
+                    <Button className="w-full bg-rpf-gradient-primary hover:opacity-90 text-rpf-white rounded-full rpf-body font-semibold shadow-lg">
                       Learn More
                     </Button>
                   </div>
@@ -796,7 +824,7 @@ function HomePage() {
                       <span>Weekly Meetings</span>
                     </div>
                   </div>
-                  <Button className="w-full bg-black hover:bg-gray-800 text-white rounded-full font-semibold">
+                  <Button className="w-full bg-rpf-gradient-primary hover:opacity-90 text-rpf-white rounded-full rpf-body font-semibold shadow-lg">
                     Join Fellowship
                   </Button>
                 </div>
@@ -836,7 +864,7 @@ function HomePage() {
                       <span>Multiple Time Zones</span>
                     </div>
                   </div>
-                  <Button className="w-full bg-black hover:bg-gray-800 text-white rounded-full font-semibold">
+                  <Button className="w-full bg-rpf-gradient-fire hover:opacity-90 text-rpf-white rounded-full rpf-body font-semibold shadow-lg">
                     Watch Online
                   </Button>
                 </div>
@@ -875,7 +903,7 @@ function HomePage() {
                   </div>
                   <Button
                     variant="outline"
-                    className="w-full border-black text-black hover:bg-black hover:text-white rounded-full font-semibold"
+                    className="w-full border-2 border-rpf-purple text-rpf-purple hover:bg-rpf-purple hover:text-rpf-white rounded-full rpf-body font-semibold"
                   >
                     Stay Updated
                   </Button>
@@ -884,22 +912,25 @@ function HomePage() {
             </div>
 
             {/* Call to Action */}
-            <div className="text-center">
-              <h3 className="text-3xl font-bold mb-4 text-gray-900">
+            <div className="text-center bg-rpf-gradient-primary rounded-3xl p-12 text-rpf-white">
+              <h3 className="rpf-title text-3xl md:text-4xl mb-4">
                 CAN'T FIND A LOCATION NEAR YOU?
               </h3>
-              <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+              <p className="rpf-body text-lg text-rpf-white/90 mb-4 max-w-2xl mx-auto">
                 Join our online community or help us bring RPF Europe to your
                 city. Revival starts with one person.
               </p>
+              <p className="rpf-tagline text-rpf-gold mb-8">
+                IT'S TIME TO SEEK THE LORD
+              </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-full font-bold">
+                <Button className="bg-rpf-gold text-rpf-black hover:bg-rpf-gold/90 px-8 py-4 rounded-full rpf-body font-bold shadow-lg">
                   Start a Branch
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-black text-black hover:bg-black hover:text-white px-8 py-4 rounded-full font-bold"
+                  className="border-2 border-rpf-white text-rpf-white hover:bg-rpf-white hover:text-rpf-purple px-8 py-4 rounded-full rpf-body font-bold"
                 >
                   <Play className="mr-2 h-5 w-5" />
                   Watch Online
@@ -911,15 +942,18 @@ function HomePage() {
       </section>
 
       {/* Ministries Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-rpf-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black mb-4 text-gray-900">
+              <h2 className="rpf-title text-4xl md:text-5xl mb-4 text-rpf-black">
                 GET CONNECTED
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <p className="rpf-body text-xl text-rpf-black/70 max-w-2xl mx-auto mb-4">
                 Find your place in our community and grow in your faith journey
+              </p>
+              <p className="rpf-tagline text-rpf-gold">
+                IT'S TIME TO SEEK THE LORD
               </p>
             </div>
 
@@ -933,21 +967,21 @@ function HomePage() {
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="bg-white/90 p-4 rounded-full group-hover:scale-110 transition-transform duration-300">
-                      <Users className="h-8 w-8 text-black" />
+                    <div className="bg-rpf-purple/90 p-4 rounded-full group-hover:scale-110 transition-transform duration-300">
+                      <Users className="h-8 w-8 text-rpf-white" />
                     </div>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                <h3 className="rpf-title text-2xl mb-4 text-rpf-black">
                   COMMUNITY GROUPS
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="rpf-body text-rpf-black/70 mb-6">
                   Connect with others in small group settings for deeper
                   relationships and spiritual growth.
                 </p>
                 <Button
                   variant="outline"
-                  className="border-black text-black hover:bg-black hover:text-white rounded-full"
+                  className="border-rpf-purple text-rpf-purple hover:bg-rpf-purple hover:text-rpf-white rounded-full rpf-body font-semibold"
                 >
                   Find A Group
                 </Button>
@@ -962,21 +996,21 @@ function HomePage() {
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="bg-white/90 p-4 rounded-full group-hover:scale-110 transition-transform duration-300">
-                      <Star className="h-8 w-8 text-black" />
+                    <div className="bg-rpf-blue/90 p-4 rounded-full group-hover:scale-110 transition-transform duration-300">
+                      <Star className="h-8 w-8 text-rpf-white" />
                     </div>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                <h3 className="rpf-title text-2xl mb-4 text-rpf-black">
                   YOUTH MINISTRY
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="rpf-body text-rpf-black/70 mb-6">
                   Empowering the next generation through engaging programs and
                   mentorship opportunities.
                 </p>
                 <Button
                   variant="outline"
-                  className="border-black text-black hover:bg-black hover:text-white rounded-full"
+                  className="border-rpf-blue text-rpf-blue hover:bg-rpf-blue hover:text-rpf-white rounded-full rpf-body font-semibold"
                 >
                   Join Youth
                 </Button>
@@ -991,21 +1025,21 @@ function HomePage() {
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="bg-white/90 p-4 rounded-full group-hover:scale-110 transition-transform duration-300">
-                      <Heart className="h-8 w-8 text-black" />
+                    <div className="bg-rpf-red/90 p-4 rounded-full group-hover:scale-110 transition-transform duration-300">
+                      <Heart className="h-8 w-8 text-rpf-white" />
                     </div>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                <h3 className="rpf-title text-2xl mb-4 text-rpf-black">
                   OUTREACH
                 </h3>
-                <p className="text-gray-600 mb-6">
+                <p className="rpf-body text-rpf-black/70 mb-6">
                   Make a difference in our community through service projects
                   and mission opportunities.
                 </p>
                 <Button
                   variant="outline"
-                  className="border-black text-black hover:bg-black hover:text-white rounded-full"
+                  className="border-rpf-red text-rpf-red hover:bg-rpf-red hover:text-rpf-white rounded-full rpf-body font-semibold"
                 >
                   Get Involved
                 </Button>
@@ -1015,99 +1049,133 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Contact Section - Elevation Style */}
-      <section className="py-20 bg-black text-white">
+      {/* Testimonials Section */}
+      <section className="py-20 bg-rpf-ivory">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black mb-4">VISIT US</h2>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                We'd love to meet you. Join us for worship and experience our
-                community firsthand.
+              <h2 className="rpf-title text-4xl md:text-5xl mb-4 text-rpf-black">
+                LIVES TRANSFORMED
+              </h2>
+              <p className="rpf-body text-xl text-rpf-black/70 max-w-2xl mx-auto mb-4">
+                Hear from members of our community about how God is working in
+                their lives
+              </p>
+              <p className="rpf-tagline text-rpf-gold">
+                IT'S TIME TO SEEK THE LORD
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
-                  <MapPin className="h-8 w-8 text-black" />
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-rpf-white rounded-2xl p-8 shadow-lg">
+                <div className="flex items-center mb-6">
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                    alt="Sarah M."
+                    className="w-16 h-16 rounded-full object-cover mr-4"
+                  />
+                  <div>
+                    <h4 className="rpf-body font-semibold text-rpf-black">
+                      Sarah M.
+                    </h4>
+                    <p className="rpf-body text-sm text-rpf-black/60">
+                      London Branch
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-2">ADDRESS</h3>
-                <div className="text-gray-300 space-y-1">
-                  <p>9-11 Cottage Green</p>
-                  <p>London SE5 7ST</p>
-                </div>
+                <p className="rpf-body text-rpf-black/80 leading-relaxed">
+                  "RPF has completely transformed my relationship with God. The
+                  sound doctrine and loving community have helped me grow in
+                  ways I never imagined possible."
+                </p>
               </div>
 
-              <div className="text-center">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Phone className="h-8 w-8 text-black" />
+              <div className="bg-rpf-white rounded-2xl p-8 shadow-lg">
+                <div className="flex items-center mb-6">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                    alt="James K."
+                    className="w-16 h-16 rounded-full object-cover mr-4"
+                  />
+                  <div>
+                    <h4 className="rpf-body font-semibold text-rpf-black">
+                      James K.
+                    </h4>
+                    <p className="rpf-body text-sm text-rpf-black/60">
+                      University Fellowship
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-2">PHONE</h3>
-                <p className="text-gray-300">020 335 52829</p>
+                <p className="rpf-body text-rpf-black/80 leading-relaxed">
+                  "As a university student, finding RPF was a blessing. The
+                  youth ministry and campus fellowship have been instrumental in
+                  my spiritual journey."
+                </p>
               </div>
 
-              <div className="text-center">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Mail className="h-8 w-8 text-black" />
+              <div className="bg-rpf-white rounded-2xl p-8 shadow-lg">
+                <div className="flex items-center mb-6">
+                  <img
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                    alt="Grace O."
+                    className="w-16 h-16 rounded-full object-cover mr-4"
+                  />
+                  <div>
+                    <h4 className="rpf-body font-semibold text-rpf-black">
+                      Grace O.
+                    </h4>
+                    <p className="rpf-body text-sm text-rpf-black/60">
+                      Online Community
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-2">EMAIL</h3>
-                <p className="text-gray-300">admin@rpfeurope.com</p>
+                <p className="rpf-body text-rpf-black/80 leading-relaxed">
+                  "Even from across the world, I feel connected to the RPF
+                  family. The online services and prayer support have been
+                  life-changing."
+                </p>
               </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Calendar className="h-8 w-8 text-black" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">SUNDAY</h3>
-                <p className="text-gray-300">10:00 AM</p>
-              </div>
-            </div>
-
-            {/* Social Media */}
-            <div className="text-center">
-              <h3 className="text-2xl font-bold mb-8">FOLLOW US</h3>
-              <div className="flex justify-center space-x-6">
-                <a
-                  href="https://www.instagram.com/rpfeurope/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-black hover:scale-110 transition-transform duration-300"
-                >
-                  <Instagram className="h-6 w-6" />
-                </a>
-                <a
-                  href="https://www.facebook.com/RPF.UK/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-black hover:scale-110 transition-transform duration-300"
-                >
-                  <Facebook className="h-6 w-6" />
-                </a>
-                <a
-                  href="https://twitter.com/rpfchurchuk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-black hover:scale-110 transition-transform duration-300"
-                >
-                  <Twitter className="h-6 w-6" />
-                </a>
-              </div>
-            </div>
-
-            {/* Call to Action */}
-            <div className="text-center mt-16">
-              <Button
-                size="lg"
-                className="bg-white text-black hover:bg-gray-100 text-lg px-12 py-4 rounded-full font-bold shadow-lg transform hover:scale-105 transition-all duration-300"
-              >
-                Plan Your Visit
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Newsletter Section */}
+      <section className="py-20 bg-rpf-gradient-primary text-rpf-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="rpf-title text-4xl md:text-5xl mb-6">
+              STAY CONNECTED
+            </h2>
+            <p className="rpf-body text-xl mb-4 text-rpf-white/90">
+              Get the latest updates on services, events, and revival news
+              delivered to your inbox
+            </p>
+            <p className="rpf-tagline text-rpf-gold mb-8">
+              IT'S TIME TO SEEK THE LORD
+            </p>
+
+            <div className="max-w-md mx-auto">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  className="flex-1 px-6 py-4 rounded-full text-rpf-black rpf-body focus:outline-none focus:ring-2 focus:ring-rpf-gold"
+                />
+                <Button className="bg-rpf-gold text-rpf-black hover:bg-rpf-gold/90 px-8 py-4 rounded-full rpf-body font-bold shadow-lg">
+                  Subscribe
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </div>
+              <p className="rpf-body text-sm text-rpf-white/70 mt-4">
+                We respect your privacy. Unsubscribe at any time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section - RPF Style */}
     </div>
   );
 }

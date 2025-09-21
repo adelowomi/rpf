@@ -5,16 +5,16 @@
 
 body {
   @apply m-0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family:
+    source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 @theme inline {
@@ -57,37 +57,57 @@ code {
 
 :root {
   --radius: 0.625rem;
+
+  /* RPF Brand Colors - Colors of the Tabernacle */
+  --rpf-royal-purple: #59427b;
+  --rpf-jordan-blue: #4469b0;
+  --rpf-scarlet-red: #c3221a;
+  --rpf-tabernacle-gold: #e6c000;
+  --rpf-linen-white: #ffffff;
+  --rpf-black: #000000;
+
+  /* Secondary Colors */
+  --rpf-heavenly-wisdom: #8681b2;
+  --rpf-desert-manna: #d9883c;
+  --rpf-sandstone: #b6ad95;
+  --rpf-covering-cloud: #cccccc;
+
+  /* Natural Colors */
+  --rpf-ivory: #eae4db;
+  --rpf-muted-grey: #cccccc;
+
+  /* Design System Colors */
   --background: oklch(1 0 0);
   --foreground: oklch(0.147 0.004 49.25);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.147 0.004 49.25);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.147 0.004 49.25);
-  --primary: oklch(0.216 0.006 56.043);
-  --primary-foreground: oklch(0.985 0.001 106.423);
-  --secondary: oklch(0.97 0.001 106.424);
-  --secondary-foreground: oklch(0.216 0.006 56.043);
-  --muted: oklch(0.97 0.001 106.424);
+  --primary: var(--rpf-royal-purple);
+  --primary-foreground: var(--rpf-linen-white);
+  --secondary: var(--rpf-jordan-blue);
+  --secondary-foreground: var(--rpf-linen-white);
+  --muted: var(--rpf-muted-grey);
   --muted-foreground: oklch(0.553 0.013 58.071);
-  --accent: oklch(0.97 0.001 106.424);
-  --accent-foreground: oklch(0.216 0.006 56.043);
-  --destructive: oklch(0.577 0.245 27.325);
+  --accent: var(--rpf-tabernacle-gold);
+  --accent-foreground: var(--rpf-black);
+  --destructive: var(--rpf-scarlet-red);
   --border: oklch(0.923 0.003 48.717);
   --input: oklch(0.923 0.003 48.717);
-  --ring: oklch(0.709 0.01 56.259);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  --ring: var(--rpf-royal-purple);
+  --chart-1: var(--rpf-royal-purple);
+  --chart-2: var(--rpf-jordan-blue);
+  --chart-3: var(--rpf-scarlet-red);
+  --chart-4: var(--rpf-tabernacle-gold);
+  --chart-5: var(--rpf-desert-manna);
   --sidebar: oklch(0.985 0.001 106.423);
   --sidebar-foreground: oklch(0.147 0.004 49.25);
-  --sidebar-primary: oklch(0.216 0.006 56.043);
-  --sidebar-primary-foreground: oklch(0.985 0.001 106.423);
+  --sidebar-primary: var(--rpf-royal-purple);
+  --sidebar-primary-foreground: var(--rpf-linen-white);
   --sidebar-accent: oklch(0.97 0.001 106.424);
   --sidebar-accent-foreground: oklch(0.216 0.006 56.043);
   --sidebar-border: oklch(0.923 0.003 48.717);
-  --sidebar-ring: oklch(0.709 0.01 56.259);
+  --sidebar-ring: var(--rpf-royal-purple);
 }
 
 .dark {
@@ -135,7 +155,8 @@ code {
 
 /* Custom Animations */
 @keyframes gradient-x {
-  0%, 100% {
+  0%,
+  100% {
     background-size: 200% 200%;
     background-position: left center;
   }
@@ -157,7 +178,8 @@ code {
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -166,7 +188,8 @@ code {
 }
 
 @keyframes glow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(251, 146, 60, 0.3);
   }
   50% {
@@ -200,14 +223,21 @@ code {
 }
 
 .animate-shimmer {
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
   background-size: 200% 100%;
   animation: shimmer 2s infinite;
 }
 
 /* Hover effects */
 .hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .hover-lift:hover {
@@ -216,11 +246,21 @@ code {
 }
 
 /* Staggered animations */
-.stagger-1 { animation-delay: 0.1s; }
-.stagger-2 { animation-delay: 0.2s; }
-.stagger-3 { animation-delay: 0.3s; }
-.stagger-4 { animation-delay: 0.4s; }
-.stagger-5 { animation-delay: 0.5s; }
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+.stagger-5 {
+  animation-delay: 0.5s;
+}
 
 /* Parallax effect */
 .parallax {
@@ -240,4 +280,161 @@ html {
 
 .bg-gradient-conic {
   background: conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops));
+}
+/* RPF Brand Typography - Montserrat Font */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+/* RPF Brand Typography Classes */
+.font-montserrat {
+  font-family:
+    "Montserrat",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    sans-serif;
+}
+
+.font-bebas {
+  font-family: "Bebas Neue", cursive;
+}
+
+/* RPF Brand Colors as Utility Classes */
+.text-rpf-purple {
+  color: var(--rpf-royal-purple);
+}
+.text-rpf-blue {
+  color: var(--rpf-jordan-blue);
+}
+.text-rpf-red {
+  color: var(--rpf-scarlet-red);
+}
+.text-rpf-gold {
+  color: var(--rpf-tabernacle-gold);
+}
+.text-rpf-white {
+  color: var(--rpf-linen-white);
+}
+.text-rpf-black {
+  color: var(--rpf-black);
+}
+
+.bg-rpf-purple {
+  background-color: var(--rpf-royal-purple);
+}
+.bg-rpf-blue {
+  background-color: var(--rpf-jordan-blue);
+}
+.bg-rpf-red {
+  background-color: var(--rpf-scarlet-red);
+}
+.bg-rpf-gold {
+  background-color: var(--rpf-tabernacle-gold);
+}
+.bg-rpf-white {
+  background-color: var(--rpf-linen-white);
+}
+.bg-rpf-black {
+  background-color: var(--rpf-black);
+}
+.bg-rpf-ivory {
+  background-color: var(--rpf-ivory);
+}
+.bg-rpf-muted-grey {
+  background-color: var(--rpf-muted-grey);
+}
+
+.border-rpf-purple {
+  border-color: var(--rpf-royal-purple);
+}
+.border-rpf-blue {
+  border-color: var(--rpf-jordan-blue);
+}
+.border-rpf-red {
+  border-color: var(--rpf-scarlet-red);
+}
+.border-rpf-gold {
+  border-color: var(--rpf-tabernacle-gold);
+}
+
+/* RPF Brand Gradients */
+.bg-rpf-gradient-primary {
+  background: linear-gradient(
+    135deg,
+    var(--rpf-royal-purple),
+    var(--rpf-jordan-blue)
+  );
+}
+
+.bg-rpf-gradient-fire {
+  background: linear-gradient(
+    135deg,
+    var(--rpf-scarlet-red),
+    var(--rpf-tabernacle-gold)
+  );
+}
+
+.bg-rpf-gradient-tabernacle {
+  background: linear-gradient(
+    135deg,
+    var(--rpf-royal-purple),
+    var(--rpf-jordan-blue),
+    var(--rpf-scarlet-red),
+    var(--rpf-tabernacle-gold)
+  );
+}
+
+/* RPF Typography Styles */
+.rpf-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+.rpf-subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+.rpf-body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+}
+
+.rpf-body-thin {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 100;
+  letter-spacing: -0.025em;
+}
+
+/* RPF Tagline Styling */
+.rpf-tagline {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--rpf-tabernacle-gold);
+}
+
+/* Override body font to use Montserrat */
+body {
+  font-family:
+    "Montserrat",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.025em;
 }

@@ -24,12 +24,12 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "RPF Europe - Find Your Purpose, Grow in Community",
+        title: "Redeemed Pillar of Fire (RPF) - IT'S TIME TO SEEK THE LORD",
       },
       {
         name: "description",
         content:
-          "Join Redeemed Pillar of Fire Europe - a vibrant community of believers dedicated to revival, prayer, and spreading God's love. Find your purpose and grow in faith.",
+          "Join Redeemed Pillar of Fire - sparking and sustaining revival to restore the early church as defined in Acts until the coming of Christ. Experience transformation through love, sound doctrine, and spiritual discipline.",
       },
     ],
     links: [

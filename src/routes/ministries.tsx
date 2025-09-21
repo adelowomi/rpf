@@ -3,10 +3,6 @@ import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
   Users,
-  Heart,
-  BookOpen,
-  Music,
-  HandHeart,
   Globe,
   MapPin,
   Calendar,
@@ -30,15 +26,15 @@ function MinistriesPage() {
   const branches = [
     {
       id: "london",
-      name: "RPF LONDON",
+      name: "RPF EUROPE",
       location: "London, UK",
       address: "9-11 Cottage Green, London SE5 7ST",
       image:
         "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       description:
-        "Our flagship location where it all began in 2014. Experience powerful worship and life-changing ministry in the heart of London.",
+        "Our flagship location where revival began in 2014. Experience powerful worship, sound doctrine, and life-changing ministry in the heart of London.",
       badge: "FLAGSHIP",
-      color: "from-blue-600 to-blue-700",
+      color: "from-rpf-purple to-rpf-blue",
       services: {
         sunday: "10:00 AM",
         wednesday: "7:00 PM",
@@ -46,38 +42,38 @@ function MinistriesPage() {
         youth: "Saturdays 4:00 PM",
       },
       contact: {
-        phone: "+44 20 7123 4567",
-        email: "london@rpfeurope.org",
+        phone: "020 335 52829",
+        email: "admin@rpfeurope.com",
       },
-      pastor: "Pastor John Smith",
+      pastor: "Pastor Austin E-Ben",
       established: "2014",
       capacity: "500 people",
       parking: "Street parking available",
       transport: "Camberwell Green Station (5 min walk)",
       ministries: [
         "Sunday Service",
+        "Prayer Ministry",
+        "Bible Study",
         "Youth Ministry",
         "Children's Ministry",
-        "Bible Study",
-        "Prayer Ministry",
         "Worship Team",
       ],
       specialEvents: [
-        "Monthly Healing Services",
+        "Monthly Revival Services",
         "Quarterly Conferences",
         "Annual Revival Week",
       ],
     },
     {
-      id: "manchester",
-      name: "RPF MANCHESTER",
-      location: "Manchester, UK",
-      address: "Central Manchester Location",
+      id: "africa",
+      name: "RPF AFRICA",
+      location: "Multiple Locations",
+      address: "Various African Cities",
       image:
         "https://images.unsplash.com/photo-1583422409516-2895a77efded?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       description:
-        "Bringing revival to the North with passionate worship, strong community, and transformative ministry experiences.",
-      color: "from-green-600 to-green-700",
+        "Spreading revival across Africa with passionate worship, strong community, and transformative ministry experiences rooted in love and prayer.",
+      color: "from-rpf-red to-rpf-gold",
       services: {
         sunday: "11:00 AM",
         wednesday: "7:00 PM",
@@ -108,15 +104,15 @@ function MinistriesPage() {
       ],
     },
     {
-      id: "birmingham",
-      name: "RPF BIRMINGHAM",
-      location: "Birmingham, UK",
-      address: "Central Birmingham Location",
+      id: "northamerica",
+      name: "RPF NORTH AMERICA",
+      location: "Multiple Locations",
+      address: "Various North American Cities",
       image:
         "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       description:
-        "Serving the Midlands with love, prayer, and transformative worship that impacts lives and communities.",
-      color: "from-purple-600 to-purple-700",
+        "Establishing revival across North America with love, prayer, and transformative worship that impacts lives and communities.",
+      color: "from-rpf-blue to-rpf-purple",
       services: {
         sunday: "10:30 AM",
         wednesday: "7:00 PM",
@@ -374,9 +370,7 @@ function MinistriesPage() {
                   </div>
 
                   <div className="pt-4">
-                    <Button
-                      className={`w-full bg-gradient-to-r ${selectedBranch.color} hover:opacity-90 text-white rounded-full font-semibold py-3`}
-                    >
+                    <Button className="w-full bg-rpf-gradient-primary hover:opacity-90 text-rpf-white rounded-full rpf-body font-semibold py-3 shadow-lg">
                       Plan Your Visit
                       <ArrowRight className="ml-2 h-5 w-5" />
                     </Button>
@@ -388,16 +382,20 @@ function MinistriesPage() {
         </div>
       )}
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-gray-900 to-black text-white">
+      <section className="relative py-20 bg-rpf-gradient-primary text-rpf-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-black mb-6">
+            <h1 className="rpf-title text-5xl md:text-6xl mb-6">
               OUR MINISTRIES
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-300">
-              Find your place in our community and grow in your faith journey
+            <p className="rpf-subtitle text-xl md:text-2xl mb-4 text-rpf-white/90">
+              A city beyond walls: Jerusalem shall be inhabited as towns without
+              walls
             </p>
-            <Button className="bg-yellow-400 text-black hover:bg-yellow-300 px-8 py-4 rounded-full font-bold text-lg">
+            <p className="rpf-tagline text-lg mb-8 text-rpf-gold">
+              IT'S TIME TO SEEK THE LORD
+            </p>
+            <Button className="bg-rpf-gold text-rpf-black hover:bg-rpf-gold/90 px-8 py-4 rounded-full rpf-body font-bold text-lg shadow-lg">
               Get Involved Today
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -406,16 +404,17 @@ function MinistriesPage() {
       </section>
 
       {/* Branches Section - Redesigned for Ministries */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-20 bg-gradient-to-br from-rpf-ivory to-rpf-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black mb-4 text-gray-900">
+              <h2 className="rpf-title text-4xl md:text-5xl mb-4 text-rpf-black">
                 VISIT OUR LOCATIONS
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Experience our ministries in person at any of our branches
-                across Europe, or join us online from anywhere in the world
+              <p className="rpf-body text-xl text-rpf-black/70 max-w-3xl mx-auto">
+                Experience revival and transformation at any of our branches
+                across the globe, or join our online community from anywhere in
+                the world
               </p>
             </div>
 
@@ -468,21 +467,19 @@ function MinistriesPage() {
                         </span>
                       </div>
                     </div>
-                    <Button
-                      className={`w-full bg-gradient-to-r ${branch.color} hover:opacity-90 text-white rounded-full font-semibold text-sm py-2`}
-                    >
+                    <Button className="w-full bg-rpf-gradient-primary hover:opacity-90 text-rpf-white rounded-full rpf-body font-semibold text-sm py-2 shadow-lg">
                       Learn More
                     </Button>
                   </div>
                 </div>
               ))}
 
-              {/* University Fellowship */}
+              {/* RPF on Campus */}
               <div className="group relative overflow-hidden rounded-3xl bg-white shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02] border border-gray-100">
                 <div className="relative h-48 overflow-hidden">
                   <img
                     src="https://images.unsplash.com/photo-1523050854058-8df90110c9d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    alt="University Fellowship"
+                    alt="RPF on Campus"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
@@ -494,31 +491,36 @@ function MinistriesPage() {
                     </div>
                   </div>
                   <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="text-xl font-bold mb-1">
-                      UNIVERSITY FELLOWSHIP
-                    </h3>
+                    <h3 className="rpf-title text-xl mb-1">RPF ON CAMPUS</h3>
                     <div className="flex items-center space-x-1">
                       <Users className="h-3 w-3" />
-                      <span className="text-sm">Multiple Campuses</span>
+                      <span className="rpf-body text-sm">
+                        Multiple Universities
+                      </span>
                     </div>
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                    Connecting students across universities with faith-based
-                    community, support, and ministry opportunities.
+                  <p className="rpf-body text-rpf-black/70 mb-4 text-sm leading-relaxed">
+                    Connecting students across universities with revival, sound
+                    doctrine, and transformative community rooted in love for
+                    Christ.
                   </p>
                   <div className="space-y-2 mb-6">
-                    <div className="flex items-center text-xs text-gray-500">
+                    <div className="flex items-center text-xs text-rpf-black/60">
                       <Users className="h-3 w-3 mr-2 flex-shrink-0" />
-                      <span>Multiple University Locations</span>
+                      <span className="rpf-body">
+                        Multiple University Locations
+                      </span>
                     </div>
-                    <div className="flex items-center text-xs text-gray-500">
+                    <div className="flex items-center text-xs text-rpf-black/60">
                       <Calendar className="h-3 w-3 mr-2 flex-shrink-0" />
-                      <span>Weekly Meetings • Special Events</span>
+                      <span className="rpf-body">
+                        Weekly Meetings • Revival Events
+                      </span>
                     </div>
                   </div>
-                  <Button className="w-full bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 text-white rounded-full font-semibold text-sm py-2">
+                  <Button className="w-full bg-rpf-gradient-primary hover:opacity-90 text-rpf-white rounded-full rpf-body font-semibold text-sm py-2 shadow-lg">
                     Join Fellowship
                   </Button>
                 </div>
@@ -563,7 +565,7 @@ function MinistriesPage() {
                       <span>Multiple Time Zones Supported</span>
                     </div>
                   </div>
-                  <Button className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white rounded-full font-semibold text-sm py-2">
+                  <Button className="w-full bg-rpf-gradient-fire hover:opacity-90 text-rpf-white rounded-full rpf-body font-semibold text-sm py-2 shadow-lg">
                     Watch Online
                   </Button>
                 </div>
@@ -610,23 +612,24 @@ function MinistriesPage() {
             </div>
 
             {/* Enhanced Call to Action */}
-            <div className="text-center bg-gradient-to-r from-gray-900 to-black rounded-3xl p-12 text-white">
-              <h3 className="text-3xl md:text-4xl font-bold mb-4">
+            <div className="text-center bg-rpf-gradient-primary rounded-3xl p-12 text-rpf-white">
+              <h3 className="rpf-title text-3xl md:text-4xl mb-4">
                 CAN'T FIND A LOCATION NEAR YOU?
               </h3>
-              <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-                Join our online community or help us bring RPF Europe to your
-                city. Revival starts with one person willing to make a
-                difference.
+              <p className="rpf-body text-lg text-rpf-white/90 mb-4 max-w-2xl mx-auto">
+                Join our online community or help us bring revival to your city.
+              </p>
+              <p className="rpf-tagline text-rpf-gold mb-8">
+                IT'S TIME TO SEEK THE LORD
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-gradient-to-r from-yellow-400 to-orange-400 text-black hover:from-yellow-300 hover:to-orange-300 px-8 py-4 rounded-full font-bold">
+                <Button className="bg-rpf-gold text-rpf-black hover:bg-rpf-gold/90 px-8 py-4 rounded-full rpf-body font-bold shadow-lg">
                   Start a Branch
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-full font-bold"
+                  className="border-2 border-rpf-white text-rpf-white hover:bg-rpf-white hover:text-rpf-purple px-8 py-4 rounded-full rpf-body font-bold"
                 >
                   <Play className="mr-2 h-5 w-5" />
                   Watch Online Now
@@ -638,24 +641,28 @@ function MinistriesPage() {
       </section>
 
       {/* Final Call to Action */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-rpf-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-black mb-6 text-gray-900">
+            <h2 className="rpf-title text-4xl md:text-5xl mb-6 text-rpf-black">
               READY TO GET INVOLVED?
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Take the next step in your faith journey and find your place in
-              our community
+            <p className="rpf-body text-xl text-rpf-black/70 mb-4">
+              Take the next step in your faith journey and experience
+              transformation through love, sound doctrine, and spiritual
+              discipline
+            </p>
+            <p className="rpf-tagline text-rpf-gold mb-8">
+              IT'S TIME TO SEEK THE LORD
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-full font-bold">
+              <Button className="bg-rpf-gradient-primary hover:opacity-90 text-rpf-white px-8 py-4 rounded-full rpf-body font-bold shadow-lg">
                 Contact Us
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button
                 variant="outline"
-                className="border-black text-black hover:bg-black hover:text-white px-8 py-4 rounded-full font-bold"
+                className="border-2 border-rpf-purple text-rpf-purple hover:bg-rpf-purple hover:text-rpf-white px-8 py-4 rounded-full rpf-body font-bold"
               >
                 Visit This Sunday
               </Button>
